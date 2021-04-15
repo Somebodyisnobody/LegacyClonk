@@ -1,4 +1,0 @@
-
-
-IDS_LANG_NAME=Bihari
-IDS_LANG_INFO=Original language pack by RedWolf Design2.
