@@ -1,12 +1,12 @@
 
 #strict
 
-// *** einige Funktionen, die Informationen über die
+// *** einige Funktionen, die Informationen ï¿½ber die
 //     GetXVal-Familie abfragen
 
 // Achtung: Diese Funktionen greifen direkt auf interne Werte der Engine zu. Die Benutzung
-//          kann unter Umständen zu Desynchronisation in Netzwerkspielen oder aufgenommenen
-//          Spielen führen. Einige besonders gefährliche Funktionen sind im Folgenden mit
+//          kann unter Umstï¿½nden zu Desynchronisation in Netzwerkspielen oder aufgenommenen
+//          Spielen fï¿½hren. Einige besonders gefï¿½hrliche Funktionen sind im Folgenden mit
 //          "/*(!)*/" gekennzeichnet.
 
 // GetDefCoreVal
@@ -61,7 +61,6 @@ global func GetDefVehicleControl(id def)  { return(GetDefCoreVal("VehicleControl
 global func GetDefNoComponentMass(id def) { return(GetDefCoreVal("NoComponentMass", "DefCore", def)); }
 global func GetDefClosedContainer(id def) { return(GetDefCoreVal("ClosedContainer", "DefCore", def)); }
 global func GetDefSilentCommands(id def) { return(GetDefCoreVal("SilentCommands", "DefCore", def)); }
-global func GetDefNoComponentMass(id def) { return(GetDefCoreVal("NoComponentMass", "DefCore", def)); }
 global func GetDefNoBurnDamage(id def){ return(GetDefCoreVal("NoBurnDamage", "DefCore", def)); }
 global func GetDefTemporaryCrew(id def) { return(GetDefCoreVal("TemporaryCrew", "DefCore", def)); }
 global func GetDefSmokeRate(id def)   { return(GetDefCoreVal("SmokeRate", "DefCore", def)); }
@@ -148,7 +147,6 @@ global func GetObjCoreRounds(object obj)    { return(GetObjectInfoCoreVal("Round
 global func GetObjCoreDeathCount(object obj) { return(GetObjectInfoCoreVal("DeathCount", "ObjectInfo", obj)); }
 global func GetObjCoreBirthday(object obj)  { return(GetObjectInfoCoreVal("Birthday", "ObjectInfo", obj)); }
 global func GetObjCoreTotalPlayingTime(object obj) { return(GetObjectInfoCoreVal("TotalPlayingTime", "ObjectInfo", obj)); }
-global func GetObjCoreRounds(object obj)    { return(GetObjectInfoCoreVal("Rounds", "ObjectInfo", obj)); }
 global func GetAge(object obj)              { return(GetObjectInfoCoreVal("Age", "ObjectInfo", obj)); }
 
 // GetPlayerInfoCoreVal

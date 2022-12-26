@@ -14,18 +14,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout legacyclonk repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Checkout docs repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
-          repository: legacyclonk/lcdocs
+          #repository: legacyclonk/lcdocs
+          repository: Somebodyisnobody/lcdocs
           path: lcdocs
 
       - name: Setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '16'
           cache: 'npm'
           cache-dependency-path: .github/workflows/C4ScriptDocAnalyzer/package-lock.json
 
@@ -35,10 +36,10 @@ jobs:
           sudo DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends xsltproc python-libxml2 gettext -y
 
       - name: Build function list
-        run: make -C lcdocs -j$(nproc)
+        run: make -C lcdocs lcdocs_summary.json -j$(nproc)
 
-      - name: Copy generated Functions.txt
-        run: cp lcdocs/Functions.txt .github/workflows/C4ScriptDocAnalyzer/lcdocs_functions.txt
+      - name: Copy generated lcdocs_summary.json
+        run: cp lcdocs/lcdocs_summary.json .github/workflows/C4ScriptDocAnalyzer/lcdocs_summary.json
 
       - name: Run analyze script
         id: analyze
