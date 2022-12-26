@@ -2,7 +2,7 @@ name: Validate C4Script functions
 
 on:
   push:
-    branches: [ 'master' ]
+    #branches: [ 'master']
 
 defaults:
   run:
@@ -13,7 +13,7 @@ jobs:
     name: Validate
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout legacyclonk repo
+      - name: Checkout LegacyClonk repo
         uses: actions/checkout@v3
 
       - name: Checkout docs repo
@@ -21,6 +21,7 @@ jobs:
         with:
           #repository: legacyclonk/lcdocs
           repository: Somebodyisnobody/lcdocs
+          ref: schema-validation
           path: lcdocs
 
       - name: Setup Node
@@ -32,8 +33,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install
-          sudo DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends xsltproc python-libxml2 gettext -y
+          npm install --prefix .github/workflows/C4ScriptDocAnalyzer/
 
       - name: Build function list
         run: make -C lcdocs lcdocs_summary.json -j$(nproc)
