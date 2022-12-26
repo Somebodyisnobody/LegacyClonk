@@ -107,10 +107,9 @@ if (sumEntitiesInEngine - sumEntitiesInEngineOnly === sumEntitiesInDocs - sumEnt
     console.log(`All entities processed, exiting.`);
     process.exit();
 } else {
-    console.log(`\x1b[41m\x1b[30mERROR: The set of parsed functions is not distinct!
-    We have ${sumEntitiesInEngine} entities in the engine where ${sumEntitiesInEngineOnly} are only in the engine defined so intersection set is ${sumEntitiesInEngine - sumEntitiesInEngineOnly}. On the other hand we have ${sumEntitiesInDocs} entities in the docs where ${sumEntitiesInDocsOnly} are in the docs only and not defined in the engine so the intersection set is ${sumEntitiesInDocs - sumEntitiesInDocsOnly}. From this it can be concluded that some entries appear twice.\x1b[0m`);
+    console.log(`\x1b[41m\x1b[30mERROR: The set of parsed functions is not distinct!\nWe have ${sumEntitiesInEngine} entities in the engine where ${sumEntitiesInEngineOnly} are only in the engine defined so intersection set is ${sumEntitiesInEngine - sumEntitiesInEngineOnly}. On the other hand we have ${sumEntitiesInDocs} entities in the docs where ${sumEntitiesInDocsOnly} are in the docs only and not defined in the engine so the intersection set is ${sumEntitiesInDocs - sumEntitiesInDocsOnly}. From this it can be concluded that some entries appear twice.\x1b[0m`);
     // Since the problems with the quantity check cost me a lot of time and nerves and drove me to the edge of insanity, I have implemented this ASCII-ART. I hope that it helps developers after me. If you want, you can use a library, which puts the values as an overlay into the ascii art, to prevent the image from shifting.
-    console.log(`\n                      Engine                                    LC-Docs                                                             
+    console.log(`\n                              Engine                                    LC-Docs                                                             
                                         &@@@@@@@@@@@@@@@@@@@@          .@@@@@@@@@@@@@@@@@@@*                                      
                                   @@@                           @@@@,                          @@@                                
                              /@@                            *@@      %@@                            @@#                           
