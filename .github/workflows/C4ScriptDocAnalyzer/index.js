@@ -138,6 +138,17 @@ if (sumEntitiesInEngine - sumEntitiesInEngineOnly === sumEntitiesInDocs - sumEnt
                  └────────────────────────────────────────────┘       └────────────────────────────────────────────┘              
                                        ${sumEntitiesInEngine}                                                ${sumEntitiesInDocs}                                       
                                                                                                                                   `);
+    // Debug infos
+    let array = summaryReportDocs.constants.map(constant => constant.name);
+    console.log("Duplicate constants from summary (sum: " + array.length + "): " + array.filter((item, index) => array.indexOf(item) !== index));
+    array = summaryReportDocs.functions.map(func => func.name);
+    console.log("Duplicate functions from summary (sum: " + array.length + "): " + array.filter((item, index) => array.indexOf(item) !== index));
+    array = c4ScriptFunctions;
+    console.log("Duplicate c4Script functions (sum: " + array.length + "): " + array.filter((item, index) => array.indexOf(item) !== index));
+    array = c4ScriptConstants;
+    console.log("Duplicate c4Script constants (sum: " + array.length + "): " + array.filter((item, index) => array.indexOf(item) !== index));
+    array = cFunctions.flat();
+    console.log("Duplicate .c functions (sum: " + array.length + "): " + array.filter((item, index) => array.indexOf(item) !== index));
 
     process.exit(2);
 }
